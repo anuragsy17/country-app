@@ -1,6 +1,8 @@
 import '../App.css';
 import React, { Component } from 'react';
 import Counter from './Counter';
+import PropTypes from 'prop-types';
+import { fetchUser } from '../action/action';
 
 
 class App extends Component{
@@ -12,9 +14,10 @@ class App extends Component{
       }
       xyz = (e) => {
           this.props.fetchUser(e.target.value);
-          console.log('hello', e.target.value);
+          
       }
       render() {
+        
           return this.props.loading ? (
               <h2>Loading</h2>
           ) : this.props.error ? (
@@ -29,6 +32,10 @@ class App extends Component{
               </>
           )
       }
+  }
+  App.propTypes = {
+      loading: PropTypes.string.isRequired,
+      function: fetchUser()
   }
 
 

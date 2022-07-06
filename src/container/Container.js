@@ -7,8 +7,8 @@ const mapStateToProps = state => {
         countryNames: state.reducer.users.map((country) => country.name),
         error: state.reducer.error,
         loading: state.reducer.loading
-    }
-}
+    } 
+} 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUser: (region) => dispatch(fetchUser(region)),

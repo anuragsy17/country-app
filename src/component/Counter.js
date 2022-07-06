@@ -6,20 +6,21 @@ class Counter extends Component {
     constructor(props){
         super(props)
     }
-    state = { region: [] }
-    componentDidMount(){
+    state = { region: [] } 
+    componentDidMount(){ 
         const region = regionName.map((x)=>{ return x})
         this.setState({region: region})
     } 
     render() { 
         const regionNames = this.state.region.map((r) => r.name);
+        console.log('region r => ', regionNames);
         return (
             <>
             <form action="#" id='main-container'>
                     <div id='dropdown-container'>
                         <Dropdown 
                             lable='region' 
-                            values={regionNames}
+                            values={regionNames} 
                             id={'region'} 
                             onChange = {(data)=>{this.props.onChangeItem(data)}}
                         />

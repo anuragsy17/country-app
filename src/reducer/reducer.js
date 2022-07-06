@@ -4,13 +4,13 @@ import {
     FETCH_USERS_SUCCESS,
     FETCH_REGION_SUCCESS,
     FETCH_REGION_FAILURE
-} from "../action/types"
+} from "../action/types"  
 
-const initialState = {
+export const initialState = {
     loading: false,
     users: [],
     error: '',
-    region: []
+    
 }
 const reducer = (state = initialState, action ) =>{
     switch (action.type){
